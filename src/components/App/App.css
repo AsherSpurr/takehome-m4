@@ -7,6 +7,13 @@
   pointer-events: none;
 }
 
+.App_header {
+  height: 10vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
 .MuiCard {
   padding: 40px;
   text-align: left;
