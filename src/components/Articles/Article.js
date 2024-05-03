@@ -1,8 +1,18 @@
-function Article() {
+import MuiCard from "../MuiCard/MuiCard";
+
+function Article({ articleData }) {
+  const cards = articleData.map((article) => {
+    return (
+      <MuiCard
+        image={article.urlToImage}
+        description={article.description}
+        title={article.title}
+      />
+    )
+  })
     return (
       <div className="Article">
-        <header className="Article-header">
-        </header>
+        {cards}
       </div>
     );
   }

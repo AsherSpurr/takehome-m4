@@ -1,8 +1,9 @@
-function Home() {
+import Article from "../Articles/Article";
+
+function Home({ articleData }) {
     return (
       <div className="Home">
-        <header className="Home-header">
-        </header>
+        <Article articleData={articleData}/>
       </div>
     );
   }
