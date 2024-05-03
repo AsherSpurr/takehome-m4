@@ -10,7 +10,7 @@ function MuiCard({ articleData }) {
 
   return (
     <div className="MuiCard">
-      <Grid container spacing={1} columns={3}>
+      <Grid container spacing={5} columns={3}>
         {articleData.map((article) => {
           return (
             <Grid item xs={1} md={1} lg={1} xl={1}>
