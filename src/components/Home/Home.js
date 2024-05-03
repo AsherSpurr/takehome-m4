@@ -1,9 +1,9 @@
 import Article from "../Articles/Article";
 
-function Home({ articleData }) {
+function Home({ filteredData }) {
     return (
       <div className="Home">
-        <Article articleData={articleData}/>
+        <Article filteredData={filteredData}/>
       </div>
     );
   }

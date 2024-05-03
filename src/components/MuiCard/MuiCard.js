@@ -6,12 +6,12 @@ import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import Grid from "@mui/material/Grid";
 
-function MuiCard({ articleData }) {
+function MuiCard({ filteredData }) {
 
   return (
     <div className="MuiCard">
       <Grid container spacing={5} columns={3}>
-        {articleData.map((article) => {
+        {filteredData.map((article) => {
           return (
             <Grid item xs={1} md={1} lg={1} xl={1}>
               <Card>
