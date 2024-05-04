@@ -1,25 +1,55 @@
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import { Stack } from '@mui/material';
+import CheckIcon from '@mui/icons-material/Check';
+import {Box, Chip, RadioGroup, Radio } from '@mui/joy'
 
-function Filter({ setFilter }) {
-  const handleFilterSelect = (e) => {
-    setFilter(e.target.id)
-  }
+function Filter({ setFilter, filter }) {
 
     return (
       <div className="Filter">
-        <Stack>
-        <ButtonGroup spacing={3} size='sm'>
-          <Button id='Tech' onClick={(e) => {handleFilterSelect(e)}}>Tech</Button>
-          <Button id='Business' onClick={(e) => {handleFilterSelect(e)}}>Business</Button>
-          <Button id='Art' onClick={(e) => {handleFilterSelect(e)}}>Art</Button>
-          <Button id='Politics' onClick={(e) => {handleFilterSelect(e)}}>Politics</Button>
-          <Button id='Science' onClick={(e) => {handleFilterSelect(e)}}>Science</Button>
-          <Button id='Health' onClick={(e) => {handleFilterSelect(e)}}>Health</Button>
-          <Button id='Global' onClick={(e) => {handleFilterSelect(e)}}>Global</Button>
-        </ButtonGroup>
-        </Stack>
+        <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+          <RadioGroup
+            name='article-filters'
+            aria-labelledby='article-filters'
+            orientation="horizontal"
+            sx={{ flexWrap: 'wrap', gap: 1 }}
+         >
+            {[
+              'Tech',
+              'Business',
+              'Art',
+              'Politics',
+              'Science',
+              'Health',
+              'Global'
+            ].map((name) => {
+              const checked = filter === name
+              return (
+                <Chip
+                  key={name}
+                  variant='plain'
+                  color={checked ? 'primary' : 'neutral'}
+                  startDecorator={
+                    checked && <CheckIcon sx={{ zIndex: 1, pointerEvents: 'none' }} />
+                  }
+                >
+                  <Radio
+                    variant="outlined"
+                    color={checked ? 'primary' : 'neutral'}
+                    disableIcon
+                    overlay
+                    label={name}
+                    value={name}
+                    checked={checked}
+                    onChange={(e) => {
+                      if(e.target.checked) {
+                        setFilter(name)
+                      }
+                    }}
+                  ></Radio>
+                </Chip>
+              )
+            })}
+          </RadioGroup>
+        </Box>
       </div>
     );
   }

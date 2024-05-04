@@ -37,7 +37,7 @@ function App() {
         </nav>
       </header>
       <h2 className='h2'>{!filter || filter !== 'Global' ? 'US Top Stories' : 'Global Headlines'}</h2>
-      <Filter setFilter={setFilter}/>
+      <Filter setFilter={setFilter} filter={filter}/>
       <Routes>
         <Route path='/' element={<Home filteredData={filteredData} />}/>
         {/* <Route path='/:filter' element={</>}/> */}
