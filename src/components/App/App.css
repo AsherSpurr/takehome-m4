@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App_header {
   height: 10vh;
   display: flex;
@@ -17,4 +12,14 @@
 .MuiCard {
   padding: 40px;
   text-align: left;
+}
+
+.h2 {
+  text-align: left;
+  text-indent: 3%;
+  font-size: xx-large;
+}
+
+.Filter {
+  margin-left: 3%;
 }

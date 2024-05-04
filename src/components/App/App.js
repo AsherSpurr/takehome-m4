@@ -8,38 +8,26 @@ import Filter from '../Filter/Filter'
 import { fetchArticles, fetchHeadlines } from '../../apiCalls';
 
 function App() {
-  const [articleData, setarticleData] = useState([])
   const [filteredData, setFilteredData] = useState([])
-  const [filter, setFilter] = useState()
+  const [filter, setFilter] = useState('')
   const key = process.env.REACT_APP_NEWS
-console.log(filter)
-  useEffect(() => {
-    // setarticleData(allBitcoin.articles)
-    // setFilteredData(articleData)
-    if(filter) {
 
+  useEffect(() => {
+    if(filter && filter !== 'Global') {
       fetchArticles(key, filter).then(data => {
         if(data) {
-          setarticleData(data.articles)
+          setFilteredData(data.articles)
+        }
+      })
+    } else {
+      fetchHeadlines(key).then(data => {
+        if(data) {
           setFilteredData(data.articles)
         }
       })
     }
   }, [filter])
 
-  useEffect(() => {
-    fetchHeadlines(key).then(data => {
-      if(data) {
-        setarticleData(data.articles)
-        setFilteredData(data.articles)
-      }
-    })
-  }, [])
-
-  // const sortArticles = (data) => {
-  //   setarticleData(data.articles)
-  //   setFilteredData(articleData)
-  // }
 
   return (
     <div className="App">
@@ -48,6 +36,7 @@ console.log(filter)
           <Link to='/'>Home</Link>
         </nav>
       </header>
+      <h2 className='h2'>{!filter || filter !== 'Global' ? 'US Top Stories' : 'Global Headlines'}</h2>
       <Filter setFilter={setFilter}/>
       <Routes>
         <Route path='/' element={<Home filteredData={filteredData} />}/>
