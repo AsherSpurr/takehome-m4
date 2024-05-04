@@ -10,7 +10,7 @@ function Filter({ setFilter, filter }) {
             name='article-filters'
             aria-labelledby='article-filters'
             orientation="horizontal"
-            sx={{ flexWrap: 'wrap', gap: 1 }}
+            sx={{ gap: 1 }}
          >
             {[
               'Tech',
