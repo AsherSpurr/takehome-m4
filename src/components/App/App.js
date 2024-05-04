@@ -33,7 +33,7 @@ function App() {
     <div className="App">
       <header className="App_header">
         <nav>
-          <Link to='/'>Home</Link>
+          <Link to='/'>Newsie Woosies</Link>
         </nav>
       </header>
       <h2 className='h2'>{!filter || filter !== 'Global' ? 'US Top Stories' : 'Global Headlines'}</h2>
