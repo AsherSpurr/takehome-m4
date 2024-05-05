@@ -13,7 +13,11 @@
 <div align="center">
   
 
-https://github.com/AsherSpurr/t4t-p/assets/144856487/ec65412f-242c-46bf-8749-f2baaf02b620
+
+
+https://github.com/AsherSpurr/takehome-m4/assets/144856487/258f4040-403a-4472-af90-75eb3c44b0f9
+
+
 
 
 
@@ -32,14 +36,14 @@ https://github.com/AsherSpurr/t4t-p/assets/144856487/ec65412f-242c-46bf-8749-f2b
 ## Installation Instructions:
     ```
     git clone git@github.com:AsherSpurr/takehome-m4.git
-    cd spilled
+    cd takehome-m4
     npm install
     npm start
     ```
 ### Environment variables
 After cloning and installing packages
 - Create a `.env` file in the root directory
-- Copy and paste `REACT_APP_GOOGLE=myKey`
+- Copy and paste `REACT_APP_NEWS=myKey`
 - Substitute `myKey` with `your Google API` key or **message me on GitHub** so I can provide mine.
 ## Future Features/Improvements
   1. Split global and local headlines between two pages
