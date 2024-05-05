@@ -31,7 +31,7 @@ https://github.com/AsherSpurr/t4t-p/assets/144856487/ec65412f-242c-46bf-8749-f2b
 
 ## Installation Instructions:
     ```
-    git clone git@github.com:corysanders3/spilled.git
+    git clone git@github.com:AsherSpurr/takehome-m4.git
     cd spilled
     npm install
     npm start
